@@ -1,1 +1,186 @@
-page
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>VSS-SDK</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head> 
+
+<body class="landing-page">   
+     
+    <!--FACEBOOK LIKE BUTTON JAVASCRIPT SDK-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <div class="page-wrapper">
+        
+        <!-- ******Header****** -->
+        <header class="header text-center">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <span aria-hidden="true" class="fa fa-futbol-o icon"></span>
+                        <span class="text-highlight">VSS</span>-<span class="text-bold">SDK</span>
+                    </h1>
+                </div><!--//branding-->
+                <div class="tagline">
+                    <p>Um projeto OpenSource que auxília na construção de</p>
+                    <p> um time de futebol de robôs para a categoria IEEE Very Small Size [Soccer]</p>
+                </div><!--//tagline-->
+            </div><!--//container-->
+        </header><!--//header-->
+        
+        
+        <section class="cards-section text-center">
+            <div class="container">
+                <div class="intro">
+                    <p>O VSS-SDK (Suite Development Kit) busca fornecer ferramentas para auxíliar equipes que se aventurem a participar da competição
+                        de futebol de robôs <a href="http://www.cbrobotica.org/?lang=pt">IEEE Very Small Size [Soccer]</a>. O projeto foi inspirado no ferramental
+                        básico fornecido nas competições <a href="http://robocupssl.cpe.ku.ac.th/">Small Size League</a> e
+                        <a href="http://wiki.robocup.org/wiki/Soccer_Simulation_League">RoboCup 2D/3D Soccer Simulation</a>, conhecidos por possuírem uma comunidade grande e forte.
+                    </p>
+                </div>
+
+                <div id="cards-wrapper" class="cards-wrapper row">
+                    <div class = "videoWrapper">
+				        <center><iframe width="560" height="315" src="https://www.youtube.com/embed/2Yo8s7w7rTE" frameborder="0" allowfullscreen></iframe></center>
+			        </div>
+                    <br>
+                    <p>
+                        O SDK foi construído em cima do SO Linux com a proposta de ser leve, fácil de se utilizar e possibilitar a execução paralela em diversos computadores.
+                        <b>O projeto consiste nos seis seguintes projetos:</b>
+                    </p>
+                    <br>
+     
+                    <br>
+                    <div class="item item-green col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <i class="icon fa fa-low-vision"></i>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">VSS-Vision</h3>
+                            <p class="intro">Sistema de Visão Computacional para a Categoria</p>
+                            <a class="link" href="start.html"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-pink item-2 col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon fa fa-futbol-o"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">VSS-Simulator</h3>
+                            <p class="intro">Simulador de Partidas entre dois VSS-SampleStrategys</p>
+                            <a class="link" href="components.html"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-blue col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon fa fa-cube"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">VSS-Viewer</h3>
+                            <p class="intro">Ambiente 3D que incorpora os dados do VSS-Vision e VSS-Simulator</p>
+                            <a class="link" href="charts.html"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-purple col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon fa fa-hand-spock-o"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">VSS-SampleStrategy</h3>
+                            <p class="intro">Exemplo de Estratégia que se comunica com o VSS-Vision e VSS-Simulator</p>
+                            <a class="link" href="faqs.html"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-primary col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon fa fa-gamepad"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">VSS-Joystick</h3>
+                            <p class="intro">Exemplo de como controlar robôs no VSS-Simulator e robôs reais</p>
+                            <a class="link" href="showcase.html"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-orange col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon icon icon_datareport_alt"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">VSS-GameLogger</h3>
+                            <p class="intro">Gerador de Relatórios de partidas realizadas com o VSS-Vision e VSS-Simulator</p>
+                            <a class="link" href="license.html"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                </div><!--//cards-->
+                <div class="intro">
+                    <div class="callout-block callout-info">
+                        <div class="icon-holder">
+                            <i class="fa fa-cog"></i>
+                        </div><!--//icon-holder-->
+                        <div class="content">
+                            <h4 class="callout-title"><a href="install.html">Instale e Atualize o VSS-SDK</a></h4>
+                            <p>Passo a passo de como instalar, configurar e manter o VSS-SDK atualizado</p>
+                        </div><!--//content-->
+                    </div><!--//callout-->
+                    <div class="callout-block callout-success">
+                        <div class="icon-holder">
+                            <i class="fa fa-terminal"></i>
+                        </div><!--//icon-holder-->
+                        <div class="content">
+                            <h4 class="callout-title"><a href="use.html">Utilize o VSS-SDK e Desenvolva</a></h4>
+                            <p>Como utilizar o VSS-SDK e desenvolver sua própria estratégia</p>
+                        </div><!--//content-->
+                    </div><!--//callout-->
+                </diV>
+                
+            </div><!--//container-->
+        </section><!--//cards-section-->
+    </div><!--//page-wrapper-->
+    
+    <footer class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed by <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a></small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>                                                                     
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+
