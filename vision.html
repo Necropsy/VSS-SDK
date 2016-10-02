@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>VSS-SDK: Instalação</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="fa fa-futbol-o icon"></span>
+                            <span class="text-highlight">VSS</span>-<span class="text-bold">SDK</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Início</a></li>
+                    <li class="active">VSS-Vision</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-cog"></i> VSS-Vision</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 02 de Outubro de 2016</div>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+
+                            <section id="top-section" class="doc-section">
+                                <h2 class="section-title">Oque é o VSS-Vision?</h2>
+                                <div id="step1"  class="section-block">
+                                    <p>
+                                        O VSS-Vision é um sistema de visão computacional construído em cima do SO Linux e feito para o rastreamento de objetos,
+                                        especialmente robôs e uma bola golfe para a categoria de futebol de robôs IEEE Very Small Size [Soccer].
+                                    </p>
+                                    <div class = "videoWrapper">
+				                        <img src="assets/images/vss-vision/top.png" style="width: 100%"/></iframe>
+			                        </div>
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+
+                            <section id="working-section" class="doc-section">
+                                <h2 class="section-title">Funcionamento</h2>
+                                <div id="step1"  class="section-block">
+                                    <p>
+                                        Aqui encontra-se o funcionamento do programa, isto é, como escolher uma câmera, calibrar uma cor, calibrar o campo, salvar e carregar uma calibragem,
+                                        definir as cores de cada time e iniciar o rastreamento.
+                                    </p>
+                                    <div class="code-block">
+
+                                        <div id="input_data" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Entrada de Dados</h6>
+                                                <p>
+                                                    Nessa seção é escolhido a entrada de dados do sistema, ou seja, as imagens que iram alimentar o algoritmo de visão computacional.
+                                                    Existem três opções: Camera, Imagem salva e Video Salvo. Como pode ser visto na figura abaixo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/input_data.png"/>
+                                                <p>
+                                                    O sistema automáticamente reconhece qualquer camera USB conectada em qualquer distro Linux, caso não haja nenhuma camera o mesmo desabilita a opção de escolha.
+                                                    O mesmo funciona para as imagens salvas e videos salvos, o programa procura imagens no diretório VSS-Vision/src/images e videos em VSS-Vision/src/videos.
+                                                </p>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="camera_calibration" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Calibragem da Câmera</h6>
+                                                <p>
+                                                    O sistema possibilita a calibragem de uma rotação em Z e dois pontos de corte. Para calibrar o ponto de cima é necessário clicar com o botão esquerdo
+                                                    do mouse e o ponto de baixo é necessário clicar com o botão direito. Um exemplo de calibragem pode ser visto abaixo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/calibrate2.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="camera_calibration" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Calibragem de Cores</h6>
+                                                <p>
+                                                    O sistema possibilita a calibragem de 8 cores, Laranja, Amarelo, Azul, Vermelho, Verde, Rosa, Roxo, Marrom. Após o usuário escolher uma cor para calibrar
+                                                    o mesmo deve encontrar um intervalo de cor, no espaço de cores HSV, que represente-a. Ao clicar na tela com o botão esquerdo o sistema da um zoom na área
+                                                    para ajuste fino. Um exemplo de calibragem pode ser visto abaixo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/calibrate.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="colors_calibration" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Calibragem de Cores</h6>
+                                                <p>
+                                                    O sistema possibilita a calibragem de 8 cores, Laranja, Amarelo, Azul, Vermelho, Verde, Rosa, Roxo, Marrom. Após o usuário escolher uma cor para calibrar
+                                                    o mesmo deve encontrar um intervalo de cor, no espaço de cores HSV, que represente-a. Ao clicar na tela com o botão esquerdo o sistema da um zoom na área
+                                                    para ajuste fino. Um exemplo de calibragem pode ser visto abaixo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/calibrate.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="db_calibration" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Salvando/Carregando Calibragens</h6>
+                                                <p>
+                                                    Para facilitar o desenvolvimento foi implementado um Banco de Dados para guardar calibragens. Para salvar uma nova calibragem, basta entrar com um nome no 
+                                                    campo ao lado do botão <b>Save</b> e clicar no mesmo. Para carregar uma calibragem feita anteriormente, basta entrar com o nome da mesma no campo ao lado
+                                                    do botão <b>Load</b> e clicar no mesmo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/db.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="execution_config" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Configuração dos Times</h6>
+                                                <p>
+                                                    Nessa seção é escolhido a configuração de cores dos times, ou seja, as cores primarias: Azul e Amarelo, e as cores secundárias de cada robôs, se existente.
+                                                    Os intervalos de cores HSV utilizados no rastreamento são os mesmos definidos na seção de Calibragem de Cores. Um exemplo de configuração pode ser visto abaixo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/exec_conf.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="execution" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Execução</h6>
+                                                <p>
+                                                    Após selecionar uma entrada de dados e definido a configuração dos times, o rastreamento dos objetos em campo pode ser iniciado. Um exemplo de funcionamento
+                                                    pode ser visto abaixo.
+                                                </p>
+                                                <img src="assets/images/vss-vision/run.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+                                    </div><!--//code-block-->
+
+                                    <div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-terminal"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="use.html">Obtenha os estados do VSS-Vision</a></h4>
+                                            <p>Como utilizar o VSS-Vision e os outros projetos do VSS-SDK</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#top-section">Oque é o VSS-Vision?</a></li>
+                                <li>
+                                    <a class="scrollto" href="#working-section">Funcionamento</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#input_data">Entrada de Dados</a></li>
+                                        <li><a class="scrollto" href="#camera_calibration">Calibragem da Câmera</a></li>
+                                        <li><a class="scrollto" href="#colors_calibration">Calibragem de Cores</a></li>
+                                        <li><a class="scrollto" href="#db_calibration">Salvando/Carregando Calibragens</a></li>
+                                        <li><a class="scrollto" href="#execution_config">Configuração dos Times</a></li>
+                                        <li><a class="scrollto" href="#execution">Execução</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+    
+    <footer class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed by <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a></small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+
