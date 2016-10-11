@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>VSS-SDK: VSS-Vision</title>
+    <title>VSS-SDK: VSS-Simulator</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,7 @@
     
 </head> 
 
-<body class="body-primary">
+<body class="body-red">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -44,14 +44,14 @@
                 </div><!--//branding-->
                 <ol class="breadcrumb">
                     <li><a href="index.html">Início</a></li>
-                    <li class="active">VSS-Vision</li>
+                    <li class="active">VSS-Simulator</li>
                 </ol>
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-low-vision"></i> VSS-Vision</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-futbol-o"></i> VSS-Simulator</h1>
                     <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 11 de Outubro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
@@ -59,16 +59,14 @@
                         <div class="content-inner">
 
                             <section id="top-section" class="doc-section">
-                                <h2 class="section-title">Oque é o VSS-Vision?</h2>
+                                <h2 class="section-title">Oque é o VSS-Simulator?</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        O VSS-Vision é um sistema de visão computacional construído em cima do SO Linux e feito para o rastreamento de objetos,
-                                        especialmente robôs e uma bola golfe para a categoria de futebol de robôs IEEE Very Small Size [Soccer]. O projeto
-                                        se inspira no SSL-Vision, sistema de visão computacional padrão da categoria de futebol de robôs Small Size League.
+                                        O VSS-Simulator é um simulador de partidas para a categoria de futebol de robôs IEEE Very Small Size [Soccer],
+                                        nesse é possível realizar partidas entre duas estratégias que utilizem a API para se comunicar com os projetos 
+                                        do VSS-SDK. Um exemplo de como utilizar a API encontra-se no projeto VSS-SampleStrategy.
                                     </p>
-                                    <div class = "videoWrapper">
-				                        <img src="assets/images/vss-vision/top.png" style="width: 100%"/></iframe>
-			                        </div>
+				                    <img src="assets/images/vss-simulator-params.png"/></iframe>
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
 
@@ -76,82 +74,65 @@
                                 <h2 class="section-title">Funcionamento</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        Aqui encontra-se o funcionamento do programa, isto é, como escolher uma câmera, calibrar uma cor, calibrar o campo, salvar e carregar uma calibragem,
-                                        definir as cores de cada time e iniciar o rastreamento.
+                                        Aqui encontra-se o funcionamento do programa, isto é, como executar duas estratégias com o simulador, alterar o número de gols
+                                        necessários ou o tempo para termino de uma partida e obter o relatório de final de partida. 
                                     </p>
                                     <div class="code-block">
 
-                                        <div id="input_data" class="section-block">
+                                        <div id="match_data" class="section-block">
                                             <div class="code-block">
-                                                <h6>Entrada de Dados</h6>
+                                                <h6>Executando uma Partida</h6>
                                                 <p>
-                                                    Nessa seção é escolhido a entrada de dados do sistema, ou seja, as imagens que iram alimentar o algoritmo de visão computacional.
-                                                    Existem três opções: Camera, Imagem salva e Video Salvo. Como pode ser visto na figura abaixo.
+                                                    O VSS-Simulator abre três sockets para comunicação. O primeiro socket é multicast (porta: 5555) e trata de enviar os estados do jogo utilizando
+                                                    o protocolo definido em <b>vss_state::Global_State</b>,
+                                                    isto é, posição, orientação e velocidades de cada robô e da bola. Também é aberto dois sockets de recepção unicast (TCP/IP) um para
+                                                    o time amarelo (porta: 5556) e outro para o time azul (porta: 5557). Ambos utilizando o protocolo <b>vss_command::Global_Command</b>.
                                                 </p>
-                                                <img src="assets/images/vss-vision/input_data.png"/>
                                                 <p>
-                                                    O sistema automáticamente reconhece qualquer camera USB conectada em qualquer distro Linux, caso não haja nenhuma camera o mesmo desabilita a opção de escolha.
-                                                    O mesmo funciona para as imagens salvas e videos salvos, o programa procura imagens no diretório VSS-Vision/src/images e videos em VSS-Vision/src/videos.
+                                                    Criando uma estratégia que leia o protocolo <b>vss_state::Global_State</b> da porta 5555 e escreva com o
+                                                    protocolo <b>vss_command::Global_Command</b> na porta 5556 se o time estiver utilizando a cor amarela ou na porta 5557 se o time estiver
+                                                    utilizando a cor azul. É possivel comunicar-se com o simulador. Para facilitar esse trabalho foi criado um exemplo que é o VSS-SampleStrategy.
                                                 </p>
                                             </div><!--//code-block-->
                                         </div>
 
-                                        <div id="camera_calibration" class="section-block">
+                                        <div id="gui_data" class="section-block">
                                             <div class="code-block">
-                                                <h6>Calibragem da Câmera</h6>
+                                                <h6>Interface Gráfica</h6>
                                                 <p>
-                                                    O sistema possibilita a calibragem de uma rotação em Z e dois pontos de corte. Para calibrar o ponto de cima é necessário clicar com o botão esquerdo
-                                                    do mouse e o ponto de baixo é necessário clicar com o botão direito. Um exemplo de calibragem pode ser visto abaixo.
+                                                    O simulador não possui uma interface gráfica por padrão, com esse intuito é utilizado de maneira opcional o projeto VSS-Viewer. Essa decisão foi feita para
+                                                    reforçar o compromisso de compatibilidade entre todos os projetos do VSS-SDK, assim garantindo que o espaço é representado na mesma forma 
+                                                    no VSS-Vision e no VSS-Simulator. Não havendo necessidade de alterar valores na estratégia caso a mesma esteja rodando no ambiente real
+                                                    ou simulado.
                                                 </p>
-                                                <img src="assets/images/vss-vision/calibrate2.png"/>
                                             </div><!--//code-block-->
                                         </div>
 
-                                        <div id="colors_calibration" class="section-block">
+                                        <div id="report_data" class="section-block">
                                             <div class="code-block">
-                                                <h6>Calibragem de Cores</h6>
+                                                <h6>Relatório de Partida</h6>
                                                 <p>
-                                                    O sistema possibilita a calibragem de 8 cores, Laranja, Amarelo, Azul, Vermelho, Verde, Rosa, Roxo, Marrom. Após o usuário escolher uma cor para calibrar
-                                                    o mesmo deve encontrar um intervalo de cor, no espaço de cores HSV, que represente-a. Ao clicar na tela com o botão esquerdo o sistema da um zoom na área
-                                                    para ajuste fino. Um exemplo de calibragem pode ser visto abaixo.
+                                                    Após execução de uma partida o simulador imprime algumas informações no terminal, assim facilitando a implementação de uma Inteligência Artificial.
+                                                    O relatório contém:
+                                                    <b>
+                                                        Quantidade de passos (3500 passos = 1 minuto de jogo), Total de gols de cada time, Total de gols contra por cada robô de cada time,
+                                                        Total de colisões em alta velocidade por cada robô de cada time, Posse de bola de cada time, Distância percorrida por cada robô de cada time, 
+                                                        e Tempo desperciçado travado por cada robô de cada time.
+                                                    </b>
                                                 </p>
-                                                <img src="assets/images/vss-vision/calibrate.png"/>
                                             </div><!--//code-block-->
                                         </div>
 
-                                        <div id="db_calibration" class="section-block">
+                                        <div id="parameters_data" class="section-block">
                                             <div class="code-block">
-                                                <h6>Salvando/Carregando Calibragens</h6>
+                                                <h6>Parâmetros de Inicialização</h6>
                                                 <p>
-                                                    Para facilitar o desenvolvimento foi implementado um Banco de Dados para guardar calibragens. Para salvar uma nova calibragem, basta entrar com um nome no 
-                                                    campo ao lado do botão <b>Save</b> e clicar no mesmo. Para carregar uma calibragem feita anteriormente, basta entrar com o nome da mesma no campo ao lado
-                                                    do botão <b>Load</b> e clicar no mesmo.
+                                                    O projeto possibilita acelerar o tempo da simulação em 25 vezes através do parâmetro <b>-f</b> e alterar a quantidade gols necessários para termino da partida 
+                                                    com o parâmetro <b>-g</b> de 10 á 100.
                                                 </p>
-                                                <img src="assets/images/vss-vision/db.png"/>
                                             </div><!--//code-block-->
                                         </div>
 
-                                        <div id="execution_config" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Configuração dos Times</h6>
-                                                <p>
-                                                    Nessa seção é escolhido a configuração de cores dos times, ou seja, as cores primarias: Azul e Amarelo, e as cores secundárias de cada robôs, se existente.
-                                                    Os intervalos de cores HSV utilizados no rastreamento são os mesmos definidos na seção de Calibragem de Cores. Um exemplo de configuração pode ser visto abaixo.
-                                                </p>
-                                                <img src="assets/images/vss-vision/exec_conf.png"/>
-                                            </div><!--//code-block-->
-                                        </div>
-
-                                        <div id="execution" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Execução</h6>
-                                                <p>
-                                                    Após selecionar uma entrada de dados e definido a configuração dos times, o rastreamento dos objetos em campo pode ser iniciado. Um exemplo de funcionamento
-                                                    pode ser visto abaixo.
-                                                </p>
-                                                <img src="assets/images/vss-vision/run.png"/>
-                                            </div><!--//code-block-->
-                                        </div>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
@@ -165,9 +146,9 @@
                                     </p>
                                     <div class="code-block">
 
-                                        <div id="opencv_data" class="section-block">
+                                        <div id="bullet_data" class="section-block">
                                             <div class="code-block">
-                                                <h6>OpenCV</h6>
+                                                <h6>Bullet Physics</h6>
                                                 <p>
                                                     A biblioteca OpenCV (Open Source Computer Vision Library) é um biblioteca de visão computacional e aprendizado de máquina. O OpenCV
                                                     foi construído para prover uma infraestrutura comum para aplicações de visão compucational e acelerar o uso the percepção de máquina
@@ -175,7 +156,7 @@
                                                     estado arte de visão computacional e aprendizado de máquina. O projeto utiliza a biblioteca para aplicar o rastreamento baseado em blobs,
                                                     reduzir os ruídos, otimizar o processamento e no futuro predizer posições utilizando Filtro de Kalman.
                                                 </p>
-                                                <img src="assets/images/opencv.png" style="max-width:300px;"/>
+                                                <img src="assets/images/bullet.png" style="max-width:300px;"/>
                                             </div><!--//code-block-->
                                         </div>
 
@@ -183,38 +164,16 @@
                                             <div class="code-block">
                                                 <h6>Protobuf & ZMQ</h6>
                                                 <p>
-                                                    O VSS-Vision envia o estado de jogo via sockets, para isso é utilizado a biblioteca Google Procol Buffers (Protobuf) para serializar
+                                                    O VSS-Simulator envia o estado de jogo via sockets, para isso é utilizado a biblioteca Google Procol Buffers (Protobuf) para serializar
                                                     e deserializar as mensagens, pois dentre todas as opções existentes a mesma apresenta um dos melhores desempenhos e pode ser utilizada
                                                     em diversas linguagens. A biblioteca é neutra em linguagem e neutra em plataforma, como XML, porém menor, mais rapido e simples.
                                                 </p>
                                                 <p>
                                                     Para enviar os dados o sistema abre um envio multicast na porta 5555, para isso, é utilizado a biblioteca ZeroMQ. A biblioteca
-                                                    também busca ser neutra em linguagem e plataforma, assim o sistema de visão e todos os outros projetos estão aptos a rodar em múltiplos
+                                                    também busca ser neutra em linguagem e plataforma, assim o simulador e todos os outros projetos estão aptos a rodar em múltiplos
                                                     computadores com SOs diferentes. É possivel desenvolver um módulo de inteligência que se comunique com os projetos do VSS-SDK nas
                                                     seguintes linguagens: C++, Java, Python, JavaScript, Go, Ruby, Objective-C, C#, Perl, PHP, Scala e Julia.
                                                 </p>
-                                            </div><!--//code-block-->
-                                        </div>
-
-                                        <div id="sqlite_data" class="section-block">
-                                            <div class="code-block">
-                                                <h6>SQLite</h6>
-                                                <p>
-                                                    O SQLite é uma biblioteca que implementa um banco de dados embarcado de alta-confiabilidade e que não necessita de muitas
-                                                    configurações para funcionar. Inicialmente o projeto está utilizando-a para salvar os intervalos de cores.
-                                                </p>
-                                                <img src="assets/images/sqlite.png"/>
-                                            </div><!--//code-block-->
-                                        </div>
-
-                                        <div id="qt5_data" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Qt5</h6>
-                                                <p>
-                                                    É utilizado a biblioteca Qt (Versão 5) para construir a interface gráfica. Qt é conhecido por ser um framework funcional em
-                                                    diversas linguagens e que funciona em diversos sistemas operacionais, como: Linux, Windows, Android, iOS e WinRT.
-                                                </p>
-                                                <img src="assets/images/qt.png" style="max-width:250px;"/>
                                             </div><!--//code-block-->
                                         </div>
 
@@ -223,7 +182,7 @@
                                             <i class="fa fa-terminal"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
-                                            <h4 class="callout-title"><a href="use.html">Obtenha os estados do VSS-Vision</a></h4>
+                                            <h4 class="callout-title"><a href="use.html">Obtenha os estados do VSS-Simulator e Controle os Robôs</a></h4>
                                             <p>Como utilizar o VSS-Vision e os outros projetos do VSS-SDK</p>
                                         </div><!--//content-->
                                     </div><!--//callout-->
@@ -236,25 +195,21 @@
                     <div class="doc-sidebar hidden-xs">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
-                                <li><a class="scrollto" href="#top-section">Oque é o VSS-Vision?</a></li>
+                                <li><a class="scrollto" href="#top-section">Oque é o VSS-Simulator?</a></li>
                                 <li>
                                     <a class="scrollto" href="#working-section">Funcionamento</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#input_data">Entrada de Dados</a></li>
-                                        <li><a class="scrollto" href="#camera_calibration">Calibragem da Câmera</a></li>
-                                        <li><a class="scrollto" href="#colors_calibration">Calibragem de Cores</a></li>
-                                        <li><a class="scrollto" href="#db_calibration">Salvando/Carregando Calibragens</a></li>
-                                        <li><a class="scrollto" href="#execution_config">Configuração dos Times</a></li>
-                                        <li><a class="scrollto" href="#execution">Execução</a></li>
+                                        <li><a class="scrollto" href="#match_data">Executando uma Partida</a></li>
+                                        <li><a class="scrollto" href="#gui_data">Interface Gráfica</a></li>
+                                        <li><a class="scrollto" href="#report_data">Relatório de Partida</a></li>
+                                        <li><a class="scrollto" href="#parameters_data">Parâmetros de Inicialização</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li>
                                     <a class="scrollto" href="#tech-section">Aspectos Técnicos</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#opencv_data">OpenCV</a></li>
+                                        <li><a class="scrollto" href="#bullet_data">Bullet Physics</a></li>
                                         <li><a class="scrollto" href="#interface_data">Protobuf & ZMQ</a></li>
-                                        <li><a class="scrollto" href="#sqlite_data">SQLite</a></li>
-                                        <li><a class="scrollto" href="#qt5_data">Qt5</a></li>
                                     </ul><!--//nav-->
                                 </li>
                             </ul><!--//doc-menu-->
