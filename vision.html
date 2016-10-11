@@ -152,6 +152,70 @@
                                             </div><!--//code-block-->
                                         </div>
                                     </div><!--//code-block-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+
+                            <section id="tech-section" class="doc-section">
+                                <h2 class="section-title">Aspectos Técnicos</h2>
+                                <div id="step1"  class="section-block">
+                                    <p>
+                                        Aqui encontra-se alguns aspectos técnicos sobre o funcionamento do sistema de visão computacional, como, as bibliotecas utilizadas e o motivo
+                                        de utiliza-las.
+                                    </p>
+                                    <div class="code-block">
+
+                                        <div id="opencv_data" class="section-block">
+                                            <div class="code-block">
+                                                <h6>OpenCV</h6>
+                                                <p>
+                                                    A biblioteca OpenCV (Open Source Computer Vision Library) é um biblioteca de visão computacional e aprendizado de máquina. O OpenCV
+                                                    foi construído para prover uma infraestrutura comum para aplicações de visão compucational e acelerar o uso the percepção de máquina
+                                                    em produtos comerciais. A biblioteca possui mais de 2500 algoritmos otimizados, que incluem um conjunto de algoritmos clássicos e do
+                                                    estado arte de visão computacional e aprendizado de máquina. O projeto utiliza a biblioteca para aplicar o rastreamento baseado em blobs,
+                                                    reduzir os ruídos, otimizar o processamento e no futuro predizer posições utilizando Filtro de Kalman.
+                                                </p>
+                                                <img src="assets/images/opencv.png" style="max-width:300px;"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="interface_data" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Protobuf & ZMQ</h6>
+                                                <p>
+                                                    O VSS-Vision envia o estado de jogo via sockets, para isso é utilizado a biblioteca Google Procol Buffers (Protobuf) para serializar
+                                                    e deserializar as mensagens, pois dentre todas as opções existentes a mesma apresenta um dos melhores desempenhos e pode ser utilizada
+                                                    em diversas linguagens. A biblioteca é neutra em linguagem e neutra em plataforma, como XML, porém menor, mais rapido e simples.
+                                                </p>
+                                                <p>
+                                                    Para enviar os dados o sistema abre um envio multicast na porta 5555, para isso, é utilizado a biblioteca ZeroMQ. A biblioteca
+                                                    também busca ser neutra em linguagem e plataforma, assim o sistema de visão e todos os outros projetos estão aptos a rodar em múltiplos
+                                                    computadores com SOs diferentes. É possivel desenvolver um módulo de inteligência que se comunique com os projetos do VSS-SDK nas
+                                                    seguintes linguagens: C++, Java, Python, JavaScript, Go, Ruby, Objective-C, C#, Perl, PHP, Scala e Julia.
+                                                </p>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="sqlite_data" class="section-block">
+                                            <div class="code-block">
+                                                <h6>SQLite</h6>
+                                                <p>
+                                                    O SQLite é uma biblioteca que implementa um banco de dados embarcado de alta-confiabilidade e que não necessita de muitas
+                                                    configurações para funcionar. Inicialmente o projeto está utilizando-a para salvar os intervalos de cores.
+                                                </p>
+                                                <img src="assets/images/sqlite.png"/>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                        <div id="qt5_data" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Qt5</h6>
+                                                <p>
+                                                    É utilizado a biblioteca Qt (Versão 5) para construir a interface gráfica. Qt é conhecido por ser um framework funcional em
+                                                    diversas linguagens e que funciona em diversos sistemas operacionais, como: Linux, Windows, Android, iOS e WinRT.
+                                                </p>
+                                                <img src="assets/images/qt.png" style="max-width:250px;"/>
+                                            </div><!--//code-block-->
+                                        </div>
 
                                     <div class="callout-block callout-success">
                                         <div class="icon-holder">
@@ -181,6 +245,15 @@
                                         <li><a class="scrollto" href="#db_calibration">Salvando/Carregando Calibragens</a></li>
                                         <li><a class="scrollto" href="#execution_config">Configuração dos Times</a></li>
                                         <li><a class="scrollto" href="#execution">Execução</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#tech-section">Aspectos Técnicos</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#opencv_data">OpenCV</a></li>
+                                        <li><a class="scrollto" href="#interface_data">Protobuf & ZMQ</a></li>
+                                        <li><a class="scrollto" href="#sqlite_data">SQLite</a></li>
+                                        <li><a class="scrollto" href="#qt5_data">Qt5</a></li>
                                     </ul><!--//nav-->
                                 </li>
                             </ul><!--//doc-menu-->
