@@ -218,24 +218,6 @@
                                         </div><!--//code-block-->
                                     </div>
 
-                                    <div id="new_strategy" class="section-block">
-                                        <div class="code-block">
-                                            <h6>Criando uma Estratégia</h6>
-                                            <p>
-                                                O projeto VSS-SampleStrategy fornece um exemplo de como desenvolver uma estratégia que se comunique com o SDK. Todos os estados enviados pelo VSS-Vision
-                                                e VSS-Simulator são adicinados na variável da classe strategy <b>State state</b>, para acessar por exemplo a pose do robô zero do seu time, isto é, <b>posição X, Y e rotação
-                                                em Z</b>, basta em qualquer método de Strategy chamar <b>state.robots[0].pose</b>, a mesma coisa para a pose do robô zero do time adversário,
-                                                diferenciando somente <b>state.robots[0+3].pose</b>. Para enviar os comandos para o VSS-Simulator basta atualizar a variável
-                                                <b>Command commands[3]</b> com os valores de velocidade das rodas esquerda e direita dos robôs <b>[0]</b>, <b>[1]</b> e <b>[2]</b> para que os mesmos se
-                                                direcionem para as poses objetivos.
-                                            </p>
-                                            <img src="assets/images/structs.png"/>
-                                            <p></p>
-                                            <p>Para enviar comandos para robôs reais basta adicionar uma chamada para o código de transmissão no <b>else</b> enviando os valores de <b>Command commands[3]</b>.</p>
-                                            <img src="assets/images/strategy.png"/>
-                                        </div><!--//code-block-->
-                                    </div>
-
                                     <div id="new_joystick" class="section-block">
                                         <div class="code-block">
                                             <h6>Controlando Robôs com um Joystick</h6>
@@ -258,6 +240,16 @@
                                         </div><!--//content-->
                                     </div>
 
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-futbol-o"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="index.html">Entenda mais sobre todos os projetos do VSS-SDK</a></h4>
+                                            <p>Como os projetos podem te ajudar</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
                             </section><!--//doc-section-->
 
 
@@ -274,7 +266,6 @@
                                         <li><a class="scrollto" href="#vss_state">Protocolo de Estado</a></li>
                                         <li><a class="scrollto" href="#vss_command">Protocolo de Comando</a></li>
                                         <li><a class="scrollto" href="#vss_debug">Protocolo de Debug</a></li>
-                                        <li><a class="scrollto" href="#new_strategy">Criando uma Estratégia</a></li>
                                         <li><a class="scrollto" href="#new_joystick">Controlando Robôs com um Joystick</a></li>
                                     </ul><!--//nav-->
                                 </li>

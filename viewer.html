@@ -96,7 +96,10 @@
                                             <div class="code-block">
                                                 <h6>Definindo Câmera</h6>
                                                 <p>
+                                                    Até o momento existem duas câmeras implementadas no VSS-Viewer, uma de TV e outra do topo do campo a 2 metros de altura. Para definir qualquer câmera utilizar
+                                                    basta entrar com o parâmetro -c e o tipo da camera, tv ou top.
                                                 </p>
+                                                <img src="assets/images/vss-viewer/top2.png" style="width: 100%"/>
                                             </div><!--//code-block-->
                                         </div>
 
@@ -104,7 +107,12 @@
                                             <div class="code-block">
                                                 <h6>Ativando o Debug Visual</h6>
                                                 <p>
+                                                    Cada equipe tem a possibilidade de enviar informações de debug para o VSS-Viewer, essas informações são: Pose de final, Vetor de movimento e Caminho. Poses são definidas
+                                                    por uma posição em (x, y) e uma orientação e z e são desenhadas como o topo de um robô no chão. Um vetor de movimento é definido como um posição (x, y) que parte do centro
+                                                    do robô para onde o mesmo deseja ir. Um caminho é definido com uma lista diâmica de pontos, note que os desenvolvedores tem a abertura para desenhar outras coisas além do caminho.
+                                                    Como áreas de atuação e etc. Para ativar o modo debuf basta entrar com o parâmetro -d na execução.
                                                 </p>
+                                                <img src="assets/images/vss-viewer/debug.png" style="width: 100%"/>
                                             </div><!--//code-block-->
                                         </div>
 
@@ -112,6 +120,9 @@
                                             <div class="code-block">
                                                 <h6>Definindo um IP</h6>
                                                 <p>
+                                                    O SDK foi construído com o propósito de ser facil de ser utilizado e executável em diversos computadores. É possível definir o IP de um PC em que o VSS-Vision ou VSS-Simulator
+                                                    esteja rodando na rede, com isso tem-se a possibilidade de balancear carga entre diversos computadores. Para abrir a recepção de dados e um outro computador basta entrar com o
+                                                    parâmetro -i seguido do IP. ex: ./VSS-Viewer -i 192.168.0.100 (padrão localhost ou 127.0.0.1).
                                                 </p>
                                             </div><!--//code-block-->
                                         </div>
@@ -124,7 +135,7 @@
                                 <h2 class="section-title">Aspectos Técnicos</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        Aqui encontra-se alguns aspectos técnicos sobre o funcionamento do sistema de visão computacional, como, as bibliotecas utilizadas e o motivo
+                                        Aqui encontra-se alguns aspectos técnicos sobre o funcionamento do visualizador 3D, como, as bibliotecas utilizadas e o motivo
                                         de utiliza-las.
                                     </p>
                                     <div class="code-block">
@@ -162,8 +173,38 @@
                                             <i class="fa fa-terminal"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
-                                            <h4 class="callout-title"><a href="use.html">Obtenha os estados do VSS-Vision</a></h4>
-                                            <p>Como utilizar o VSS-Vision e os outros projetos do VSS-SDK</p>
+                                            <h4 class="callout-title"><a href="use.html">Entenda como funciona a comunicação entre os projetos</a></h4>
+                                            <p>Como é realizado a comunicação entre os softwares</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-low-vision"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="vision.html">Entenda como o VSS-Vision rastreia os objetos em campo</a></h4>
+                                            <p>Quais técnicas e bibliotecas o VSS-Vision utiliza</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-futbol-o"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="simulator.html">Entenda como o VSS-Simulator realiza partidas</a></h4>
+                                            <p>Quais bibliotecas o VSS-Simulator utiliza</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-hand-spock-o"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="sample.html">Entenda como o VSS-SampleStrategy obtém os dados do VSS-Simulator e VSS-Vision</a></h4>
+                                            <p>Como o VSS-SampleStrategy pode facilitar o desenvolvimento de um estratégia</p>
                                         </div><!--//content-->
                                     </div><!--//callout-->
 
