@@ -91,7 +91,7 @@
                                                         <i class="fa fa-bomb" aria-hidden="true" style="margin-right: 10px;"></i>  
                                                     </td>
                                                     <td>
-                                                        <b>Resolver falha de segmentação com entrada de dados de vídeo salvo;</b>
+                                                        <b>Resolver falha de segmentação sem motivo aparente com entrada de dados de vídeo salvo;</b>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -258,19 +258,276 @@
                                             </table>
                                         </p>
                                     </div>
-
-
-
                             </section><!--//doc-section-->
                             
-                                                        
+                            <section id="releases-section" class="doc-section">
+                                <h2 class="section-title">Releases</h2>
+                               
+                                    <div id="v_eight" class="section-block">
+                                        <h3 class="question"><b>v1.0.8</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: parâmetros de execução paralela em diversos computadores;</span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_seven" class="section-block">
+                                        <h3 class="question"><b>v1.0.7</b></h3>
+                                        <p> 
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Possibilidade de executar os projetos em mais de um PC;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Vision </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Bando de dados para guardar calibragem de cores; <br>
+                                                [Implementado]: Salvando e carregando calibragens; <br>
+                                                [Implementado]: Adicionado velocidade da Bola e dos Robôs no pacote enviado; <br> </span>
+                                                <span style="color: green;">[Corrigido]: Situações em que clicar na tela durante a rotina de jogo fazia com que o sistema fechasse;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Joystick </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Parâmetro de execução -i que abre entrada para um ip diferente do localhost;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Parâmetro de execução -g que abre entrada para quantidade máxima de gols, de 10 a 100; <br>
+                                                [Implementado]: Parâmetro de execução -f que abre entrada para aumentar a velocidade de jogo em 25 vezes; <br>
+                                                [Implementado]: Relatório final de jogo detalhado, com mais de 5 parâmetros para cada time; <br>
+                                                [Implementado]: Adicionado velocidade da Bola e dos Robôs no pacote enviado; <br>
+                                                [Implementado]: Reposicionamento dos robôs e da bola após um gol; </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_six" class="section-block">
+                                        <h3 class="question"><b>v1.0.6</b></h3>
+                                        <p>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Adicionado velocidade da Bola e dos Robôs no pacote enviado;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Debug visual agora mostra a posição da bola meio segundo no futuro; </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_five" class="section-block">
+                                        <h3 class="question"><b>v1.0.5</b></h3>
+                                        <p>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>
+                                                <span style="color: green;">[Corrigido]: Caso em que o robô ficava grudado na parede do simulador;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Simplificação no Debug Visual. Só são desenhados a pose final e pose intermediária quando recebidos; <br>
+                                                [Implementado]: Visão padrão da camera agora voltou a ser tv;
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleStrategy </h5>
+                                            <b>    
+                                                <span style="color: purple;">[Adicionado]: Novo branch, simplificação do branch mpp_thesis. Somente com campos potenciais;
+                                                </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_four" class="section-block">
+                                        <h3 class="question"><b>v1.0.4</b></h3>
+                                        <p>
+                                            <h5> VSS-Joystick </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Parâmetro de ajuda -h "--help"; <br>
+                                                [Implementado]: Parâmetro de execução -r "--real" abre a comunicação com o ambiente real. Sem esse parâmetro é aberto a comunicação com o VSS-Simulator;
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Sistema de coordenadas agora é o mesmo do VSS-Vision
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Vista superior como padrão. Opção: top; <br>
+                                                [Implementado]: Parâmetro de ajuda -h "--help"; <br>
+                                                [Implementado]: Parâmetro de debug visual -d "--debug"; <br>
+                                                [Implementado]: Parâmetro de escolha de camera -c "--camera". Opções: tv ou top; <br>
+                                                [Implementado]: Todas as marcações do chão; <br>
+                                                [Implementado]: Paredes pintadas de branco;
+                                                </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_three" class="section-block">
+                                        <h3 class="question"><b>v1.0.3</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: green;">[Corrigido]: README.md; <br>
+                                                [Corrigido]: Shell de atualização; <br>
+                                                [Corrigido]: Conflitos gerados devido a mudança de conteúdo nos submódulos do sistema;
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Vision </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Escolha de camera pelo /dev/video0, 1...; <br>
+                                                [Implementado]: Delay de 1 segundo ao ligar a rotina de rastreamento da visão (Aumenta a segurança); <br>
+                                                </span>
+                                                <span style="color: green;">[Corrigido]: Falha de Segmentação em ambiente com luminosidade muito instável; <br></span>
+                                                <span style="color: red;">[Removido]: Binários;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>    
+                                                <span style="color: red;">[Removido]: Binários;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>   
+                                                <span style="color: green;">[Corrigido]: Imagem do README.md; <br></span> 
+                                                <span style="color: red;">[Removido]: Binários; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Joystick </h5>
+                                            <b>   
+                                                <span style="color: purple;">[Adicionado]: Repositório ao Travis CI; <br></span> 
+                                                <span style="color: red;">[Removido]: Binários; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleStrategy </h5>
+                                            <b>   
+                                                <span style="color: blue;">[Implementado]: Controle PID no branch mpp_thesis; <br></span> 
+                                                <span style="color: red;">[Removido]: Binários de todos os branchs; </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_two" class="section-block">
+                                        <h3 class="question"><b>v1.0.2</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: green;">[Corrigido]: Badges do README.md;
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Vision </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Problema de distinção entre times no envio do protobuf; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleStrategy </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: branch mpp_thesis com comunicação para robôs reais, campos potenciais e planejamento de trajetória; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Problema com o debug caso utilizado com o VSS-Vision; </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_one" class="section-block">
+                                        <h3 class="question"><b>v1.0.1</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: purple;">[Adicionado]: Release, Downloads e Pull Requests ao README.md (Em teste);
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleStrategy </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Sistemas de coordenadas; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Thread de debug para time azul readicionado; </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div id="v_zero" class="section-block">
+                                        <h3 class="question"><b>v1.0.0</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Shell de instalação de configuração ./configure.sh; <br>
+                                                [Implementado]: Shell de configuração ./init.sh e ./update.sh (./update reseta completamente o conteúda pasta CUIDADO); <br>
+                                                [Implementado]: Shell de execução ./run.sh; <br>
+                                                [Implementado]: Shell de exportação de estratégia ./export.sh;
+                                                </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Vision </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Comunicação com o VSS-SampleStrategy e VSS-Viewer; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Conversa com o VSS-SampleStrategy e VSS-Viewer; <br>
+                                                [Implementado]: Debug do Visual Studio Code; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Conversa com VSS-SampleStrategy e VSS-Simulator; <br>
+                                                [Implementado]: Debug do Visual Studio Code; </br>
+                                                [Implementado]: Recebimento de informações de debug: Step pose, Final pose e Path; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleStrategy </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Conversa com o VSS-Simulator e VSS-Viewer; <br>
+                                                [Implementado] Exemplo de Estratégia que leva um robô para a bola; <br>
+                                                [Implementado] Envio informações de debug: Step pose, Final pose e Path; </span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Joystick </h5>
+                                            <b>    
+                                                <span style="color: blue;">[Implementado]: Conversa com o VSS-Simulator; </span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                            </section><!--//doc-section-->                 
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
                     <div class="doc-sidebar">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+                                <li><a class="scrollto" href="#todo-section">TODO</a></li>
                                 <li>
-                                    <a class="scrollto" href="#todo-section">TODO</a>
+                                    <a class="scrollto" href="#releases-section">Releases</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#v_eight">v1.0.8</a></li>
+                                        <li><a class="scrollto" href="#v_seven">v1.0.7</a></li>
+                                        <li><a class="scrollto" href="#v_six">v1.0.6</a></li>
+                                        <li><a class="scrollto" href="#v_five">v1.0.5</a></li>
+                                        <li><a class="scrollto" href="#v_four">v1.0.4</a></li>
+                                        <li><a class="scrollto" href="#v_three">v1.0.3</a></li>
+                                        <li><a class="scrollto" href="#v_two">v1.0.2</a></li>
+                                        <li><a class="scrollto" href="#v_one">v1.0.1</a></li>
+                                        <li><a class="scrollto" href="#v_zero">v1.0.0</a></li>
+                                    </ul><!--//nav-->
                                 </li>
                             </ul><!--//doc-menu-->
                         </nav>
