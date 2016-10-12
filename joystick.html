@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>VSS-SDK: VSS-Simulator</title>
+    <title>VSS-SDK: VSS-Joystick</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,7 @@
     
 </head> 
 
-<body class="body-red">
+<body class="body-orange">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -44,29 +44,28 @@
                 </div><!--//branding-->
                 <ol class="breadcrumb">
                     <li><a href="index.html">Início</a></li>
-                    <li class="active">VSS-Simulator</li>
+                    <li class="active">VSS-Joystick</li>
                 </ol>
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-futbol-o"></i> VSS-Simulator</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 11 de Outubro de 2016</div>
+                    <h1 class="doc-title"><i class="icon fa fa-gamepad"></i> VSS-Joystick</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 12 de Outubro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
 
                             <section id="top-section" class="doc-section">
-                                <h2 class="section-title">Oque é o VSS-Simulator?</h2>
+                                <h2 class="section-title">Oque é o VSS-Joystick?</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        O VSS-Simulator é um simulador de partidas para a categoria de futebol de robôs IEEE Very Small Size [Soccer],
-                                        nesse é possível realizar partidas entre duas estratégias que utilizem a API para se comunicar com os projetos 
-                                        do VSS-SDK. Um exemplo de como utilizar a API encontra-se no projeto VSS-SampleStrategy.
+                                        O VSS-Joystick é um exemplo de com controlar robôs no VSS-Simulator utilizando qualquer joystick USB. Além disso, também é possível
+                                        controlar robôs reais, basta adicionar o módulo de comunicação referente a plataforma utilizada.
                                     </p>
-				                    <img src="assets/images/vss-simulator-params.png"/>
+				                    <img src="assets/images/vss-joystick/top.png"/>
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
 
@@ -74,61 +73,17 @@
                                 <h2 class="section-title">Funcionamento</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        Aqui encontra-se o funcionamento do programa, isto é, como executar duas estratégias com o simulador, alterar o número de gols
-                                        necessários ou o tempo para termino de uma partida e obter o relatório de final de partida. 
+                                        Aqui encontra-se o funcionamento do VSS-Joystick, isto é, como está organizado as classes e o que é necessário para enviar comandos para robôs reais.
                                     </p>
                                     <div class="code-block">
 
-                                        <div id="match_data" class="section-block">
+                                        <div id="unique_data" class="section-block">
                                             <div class="code-block">
-                                                <h6>Executando uma Partida</h6>
+                                                <h6>Classe Única</h6>
+                                                <img src="assets/images/vss-joystick/joystick.png"/>
+                                                <br><br>
                                                 <p>
-                                                    O VSS-Simulator abre três sockets para comunicação. O primeiro socket é multicast (porta: 5555) e trata de enviar os estados do jogo utilizando
-                                                    o protocolo definido em <b>vss_state::Global_State</b>,
-                                                    isto é, posição, orientação e velocidades de cada robô e da bola. Também é aberto dois sockets de recepção unicast (TCP/IP) um para
-                                                    o time amarelo (porta: 5556) e outro para o time azul (porta: 5557). Ambos utilizando o protocolo <b>vss_command::Global_Command</b>.
-                                                </p>
-                                                <p>
-                                                    Criando uma estratégia que leia o protocolo <b>vss_state::Global_State</b> da porta 5555 e escreva com o
-                                                    protocolo <b>vss_command::Global_Command</b> na porta 5556 se o time estiver utilizando a cor amarela ou na porta 5557 se o time estiver
-                                                    utilizando a cor azul. É possivel comunicar-se com o simulador. Para facilitar esse trabalho foi criado um exemplo que é o VSS-SampleStrategy.
-                                                </p>
-                                            </div><!--//code-block-->
-                                        </div>
-
-                                        <div id="gui_data" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Interface Gráfica</h6>
-                                                <p>
-                                                    O simulador não possui uma interface gráfica por padrão, com esse intuito é utilizado de maneira opcional o projeto VSS-Viewer. Essa decisão foi feita para
-                                                    reforçar o compromisso de compatibilidade entre todos os projetos do VSS-SDK, assim garantindo que o espaço é representado na mesma forma 
-                                                    no VSS-Vision e no VSS-Simulator. Não havendo necessidade de alterar valores na estratégia caso a mesma esteja rodando no ambiente real
-                                                    ou simulado.
-                                                </p>
-                                            </div><!--//code-block-->
-                                        </div>
-
-                                        <div id="report_data" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Relatório de Partida</h6>
-                                                <p>
-                                                    Após execução de uma partida o simulador imprime algumas informações no terminal, assim facilitando a implementação de uma Inteligência Artificial.
-                                                    O relatório contém:
-                                                    <b>
-                                                        Quantidade de passos (3500 passos = 1 minuto de jogo), Total de gols de cada time, Total de gols contra por cada robô de cada time,
-                                                        Total de colisões em alta velocidade por cada robô de cada time, Posse de bola de cada time, Distância percorrida por cada robô de cada time, 
-                                                        e Tempo desperciçado travado por cada robô de cada time.
-                                                    </b>
-                                                </p>
-                                            </div><!--//code-block-->
-                                        </div>
-
-                                        <div id="parameters_data" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Parâmetros de Inicialização</h6>
-                                                <p>
-                                                    O projeto possibilita acelerar o tempo da simulação em 25 vezes através do parâmetro <b>-f</b> e alterar a quantidade gols necessários para termino da partida 
-                                                    com o parâmetro <b>-g</b> de 10 á 100.
+                                                     Para enviar comandos para robôs reais basta adicionar uma chamada para o código de transmissão no <b>else</b>.
                                                 </p>
                                             </div><!--//code-block-->
                                         </div>
@@ -141,34 +96,23 @@
                                 <h2 class="section-title">Aspectos Técnicos</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        Aqui encontra-se alguns aspectos técnicos sobre o funcionamento do simulador, como, as bibliotecas utilizadas e o motivo
+                                        Aqui encontra-se alguns aspectos técnicos sobre o funcionamento exemplo de estratégia, como, as bibliotecas utilizadas e o motivo
                                         de utiliza-las.
                                     </p>
                                     <div class="code-block">
-
-                                        <div id="bullet_data" class="section-block">
-                                            <div class="code-block">
-                                                <h6>Bullet Physics</h6>
-                                                <p>
-                                                   A Bullet Physics é uma biblioteca de simulação que inclui um motor de física e é utilizada desde jogos a filmes. A biblioteca inclui:
-                                                   Simulações com corpo rígido e macio; Deteção de colisões discretas e contínuas; Corpos com formato de esfera, cubo, cilíndro, cone,
-                                                   formas convexas e malha de triângulos; Objetos macios do tipo tecido, corda e objetos deformáveis;  Restrições físicas quanto a motores.
-                                                </p>
-                                                <img src="assets/images/bullet.png" style="max-width:300px;"/>
-                                            </div><!--//code-block-->
-                                        </div>
 
                                         <div id="interface_data" class="section-block">
                                             <div class="code-block">
                                                 <h6>Protobuf & ZMQ</h6>
                                                 <p>
-                                                    O VSS-Simulator envia o estado de jogo via sockets, para isso é utilizado a biblioteca Google Procol Buffers (Protobuf) para serializar
+                                                    O VSS-Joystick envia os comandos via sockets, para isso é utilizado a biblioteca Google Procol Buffers (Protobuf)
+                                                    para serializar
                                                     e deserializar as mensagens, pois dentre todas as opções existentes a mesma apresenta um dos melhores desempenhos e pode ser utilizada
                                                     em diversas linguagens. A biblioteca é neutra em linguagem e neutra em plataforma, como XML, porém menor, mais rapido e simples.
                                                 </p>
                                                 <p>
-                                                    Para enviar os dados o sistema abre um envio multicast na porta 5555, para isso, é utilizado a biblioteca ZeroMQ. A biblioteca
-                                                    também busca ser neutra em linguagem e plataforma, assim o simulador e todos os outros projetos estão aptos a rodar em múltiplos
+                                                    Para enviar os comandos para o VSS-Simulator, é aberto um socket unicast na porta 5557 ou na porta 5558, para isso, é utilizado a biblioteca ZeroMQ.
+                                                    A biblioteca também busca ser neutra em linguagem e plataforma, assim o sistema de visão e todos os outros projetos estão aptos a rodar em múltiplos
                                                     computadores com SOs diferentes. É possivel desenvolver um módulo de inteligência que se comunique com os projetos do VSS-SDK nas
                                                     seguintes linguagens: C++, Java, Python, JavaScript, Go, Ruby, Objective-C, C#, Perl, PHP, Scala e Julia.
                                                 </p>
@@ -190,8 +134,8 @@
                                             <i class="fa fa-cube"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
-                                            <h4 class="callout-title"><a href="viewer.html">Entenda como o VSS-Viewer abrange o VSS-Vision e o VSS-Simulator</a></h4>
-                                            <p>Como utilizar o VSS-Viewer obtém os dados de ambos os projetos</p>
+                                            <h4 class="callout-title"><a href="viewer.html">Como o VSS-Viewer obtém e desenha suas informações de Debug</a></h4>
+                                            <p>Como utilizar o VSS-Viewer e os outros projetos do VSS-SDK</p>
                                         </div><!--//content-->
                                     </div><!--//callout-->
 
@@ -200,28 +144,28 @@
                                             <i class="fa fa-low-vision"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
-                                            <h4 class="callout-title"><a href="vision.html">Entenda como o VSS-Vision é equivalente ao VSS-Simulator</a></h4>
-                                            <p>Quais as semelhanças entre os projetos</p>
+                                            <h4 class="callout-title"><a href="vision.html">Entenda como o VSS-Vision rastreia os objetos em campo</a></h4>
+                                            <p>Quais técnicas e bibliotecas o VSS-Vision utiliza</p>
                                         </div><!--//content-->
                                     </div><!--//callout-->
 
                                     <div class="callout-block callout-danger">
                                         <div class="icon-holder">
-                                            <i class="fa fa-hand-spock-o"></i>
+                                            <i class="fa fa-futbol-o"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
-                                            <h4 class="callout-title"><a href="sample.html">Entenda como o VSS-SampleStrategy obtém os dados do VSS-Simulator</a></h4>
-                                            <p>Como o VSS-SampleStrategy pode facilitar o desenvolvimento de um estratégia</p>
+                                            <h4 class="callout-title"><a href="simulator.html">Entenda como o VSS-Simulator realiza partidas</a></h4>
+                                            <p>Quais bibliotecas o VSS-Simulator utiliza</p>
                                         </div><!--//content-->
                                     </div><!--//callout-->
 
-                                     <div class="callout-block callout-success">
+                                    <div class="callout-block callout-success">
                                         <div class="icon-holder">
-                                            <i class="fa fa-gamepad"></i>
+                                            <i class="fa fa-hand-spock-o"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
-                                            <h4 class="callout-title"><a href="joystick.html">Entenda como o VSS-Joystick pode ser útil</a></h4>
-                                            <p>Como controlar robôs utilizando qualquer joystick</p>
+                                            <h4 class="callout-title"><a href="sample.html">Entenda a importância do VSS-SampleStrategy</a></h4>
+                                            <p>Como o VSS-SampleStrategy pode facilitar o desenvolvimento de um estratégia</p>
                                         </div><!--//content-->
                                     </div><!--//callout-->
 
@@ -233,20 +177,16 @@
                     <div class="doc-sidebar hidden-xs">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
-                                <li><a class="scrollto" href="#top-section">Oque é o VSS-Simulator?</a></li>
+                                <li><a class="scrollto" href="#top-section">Oque é o VSS-Joystick?</a></li>
                                 <li>
                                     <a class="scrollto" href="#working-section">Funcionamento</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#match_data">Executando uma Partida</a></li>
-                                        <li><a class="scrollto" href="#gui_data">Interface Gráfica</a></li>
-                                        <li><a class="scrollto" href="#report_data">Relatório de Partida</a></li>
-                                        <li><a class="scrollto" href="#parameters_data">Parâmetros de Inicialização</a></li>
+                                        <li><a class="scrollto" href="#unique_data">Classe Única</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li>
                                     <a class="scrollto" href="#tech-section">Aspectos Técnicos</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#bullet_data">Bullet Physics</a></li>
                                         <li><a class="scrollto" href="#interface_data">Protobuf & ZMQ</a></li>
                                     </ul><!--//nav-->
                                 </li>
