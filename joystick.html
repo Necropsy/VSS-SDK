@@ -52,7 +52,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-gamepad"></i> VSS-Joystick</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 12 de Outubro de 2016</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 20 de Outubro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -83,7 +83,10 @@
                                                 <img src="assets/images/vss-joystick/joystick.png"/>
                                                 <br><br>
                                                 <p>
-                                                     Para enviar comandos para robôs reais basta adicionar uma chamada para o código de transmissão no <b>else</b>.
+                                                     Para enviar comandos para robôs reais basta adicionar uma chamada para o código de transmissão no <b>else</b>. É necessário adicionar a
+                                                     chamada do método de envio dentro de um <b>while(true)</b>, para obter os valores lidos dos analógicos de qualquer joystick usb basta utilizar
+                                                     o método <b>ds3.get_axis_left()</b>, que retorna um <b>JoyAxis left</b> que é composto de um array de duas posições que pegam os valores no eixo
+                                                     X e Y do controle.
                                                 </p>
                                             </div><!--//code-block-->
                                         </div>
