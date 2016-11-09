@@ -155,14 +155,6 @@
                                                         <i class="fa fa-exclamation" aria-hidden="true" style="margin-right: 10px;"></i>
                                                     </td>
                                                     <td>
-                                                        <b>Adicionar modo de desenvolvimento (Sem tempo limite);</b>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <i class="fa fa-exclamation" aria-hidden="true" style="margin-right: 10px;"></i>
-                                                    </td>
-                                                    <td>
                                                         <b>Adicionar inversão dos campos;</b>
                                                     </td>
                                                 </tr>
@@ -203,15 +195,7 @@
                                                         <i class="fa fa-asterisk" aria-hidden="true" style="margin-right: 10px;"></i>
                                                     </td>
                                                     <td>
-                                                        <b>Adicionar logos de equipes;</b>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <i class="fa fa-asterisk" aria-hidden="true" style="margin-right: 10px;"></i>
-                                                    </td>
-                                                    <td>
-                                                        <b>Adicionar placar e tempo;</b>
+                                                        <b>Adicionar o tempo do jogo;</b>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -318,25 +302,59 @@
                             
                             <section id="releases-section" class="doc-section">
                                 <h2 class="section-title">Releases</h2>
+                                    
+                                    <div id="v_ten" class="section-block">
+                                        <h3 class="question"><b>v1.1.0</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Flags fast e develop no run.sh;</span>
+                                                <br>
+                                                <span style="color: green;">[Corrigido]: Badge de versão agora é tag;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Simulator </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Bug que não mostrava o tempo passasdo no simulador;</span>
+                                                <br>
+                                                <span style="color: green;">[Corrigido]: Mensagem de fast agora esta correta (15x);</span>
+                                                <br>
+                                                <span style="color: blue;">[Implementado]: Mensagem de conexão com times;</span>
+                                                <br>
+                                                <span style="color: blue;">[Implementado]: Modo de desenvolvimento;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Viewer </h5>
+                                            <b>
+                                                <span style="color: red;">[Removido]: Métodos não mais utilizados;</span>
+                                                <br> 
+                                                <span style="color: green;">[Corrigido]: Bug do debug visual que mudava a cor dos objetos;</span>
+                                                <br>
+                                                <span style="color: blue;">[Implementado]: Placar do jogo;</span>
+                                                <br>
+                                                <span style="color: blue;">[Implementado]: Nome de times;</span>
+                                            </b>
+                                        </p>
+                                    </div>
 
                                     <div id="v_nine" class="section-block">
                                         <h3 class="question"><b>v1.0.9</b></h3>
                                         <p>
                                             <h5> VSS-SDK </h5>
                                             <b>
-                                                <span style="color: blue;">[Implementado]: documentação/comentário em todos os VSS-Interface em todos os projetos;</span>
+                                                <span style="color: blue;">[Implementado]: Documentação/comentário em todos os VSS-Interface em todos os projetos;</span>
                                                 <br>
-                                                <span style="color: green;">[Corrigido]: removido arquivos que não deveriam estar presentes no SDK;</span>
+                                                <span style="color: green;">[Corrigido]: Removido arquivos que não deveriam estar presentes no SDK;</span>
                                             </b>
                                             <br><br>
                                             <h5> VSS-Joystick </h5>
                                             <b>    
-                                                <span style="color: green;">[Corrigido]: refatorado, comentado e com documentação gerada por doxygen atualizada;</span>
+                                                <span style="color: green;">[Corrigido]: Refatorado, comentado e com documentação gerada por doxygen atualizada;</span>
                                             </b>
                                             <br><br>
                                             <h5> VSS-Viewer </h5>
                                             <b>    
-                                                <span style="color: green;">[Corrigido]: comentado e com documentação gerada por doxygen atualizada;</span>
+                                                <span style="color: green;">[Corrigido]: Comentado e com documentação gerada por doxygen atualizada;</span>
                                             </b>
                                         </p>
                                     </div>
@@ -346,7 +364,7 @@
                                         <p>
                                             <h5> VSS-SDK </h5>
                                             <b>
-                                                <span style="color: blue;">[Implementado]: parâmetros de execução paralela em diversos computadores;</span>
+                                                <span style="color: blue;">[Implementado]: Parâmetros de execução paralela em diversos computadores;</span>
                                             </b>
                                         </p>
                                     </div>
@@ -597,6 +615,7 @@
                                 <li>
                                     <a class="scrollto" href="#releases-section">Releases</a>
                                     <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#v_ten">v1.1.0</a></li>
                                         <li><a class="scrollto" href="#v_nine">v1.0.9</a></li>
                                         <li><a class="scrollto" href="#v_eight">v1.0.8</a></li>
                                         <li><a class="scrollto" href="#v_seven">v1.0.7</a></li>
