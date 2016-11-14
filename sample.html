@@ -44,44 +44,40 @@
                 </div><!--//branding-->
                 <ol class="breadcrumb">
                     <li><a href="index.html">Início</a></li>
-                    <li class="active">VSS-SampleStrategy</li>
+                    <li class="active">VSS-Samples</li>
                 </ol>
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-hand-spock-o"></i> VSS-SampleStrategy</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 12 de Outubro de 2016</div>
+                    <h1 class="doc-title"><i class="icon fa fa-hand-spock-o"></i> VSS-Samples</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 14 de Nobemvro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
 
                             <section id="top-section" class="doc-section">
-                                <h2 class="section-title">Oque é o VSS-SampleStrategy?</h2>
+                                <h2 class="section-title">Oque são VSS-Samples?</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        O VSS-SampleStrategy é um exemplo de como utilizar o VSS-SDK. Inicialmente o mesmo foi desenvolvido em C++, contudo,
-                                        também é possível desenvolver utilizando: Java, Python, JavaScript, Go, Ruby, Objective-C, C#, Perl, PHP, Scala e Julia. 
+                                        VSS-Samples são exemplos de códigos que se comunicam com o <b>VSS-SDK</b>. Atualmente foram implemetados versão de comunicação
+                                        em <b>C++ (VSS-SampleCpp)</b> e <b>Rust (VSS-SampleRust)</b>, contudo, também é possível desenvolver um módulo de inteligência utilizando:
+                                        <b>Java, Python, JavaScript, Go, Ruby, Objective-C, C#, Perl, PHP, Scala e Julia</b>. 
                                     </p>
                                     <p>
-                                        No branch <b>master</b> encontra-se um simples exemplo contendo dois métodos capazes de levar um robô para uma posição 
-                                        específica.
+                                        O exemplo padrão que roda no VSS-SDK está no VSS-SampleCpp, no branch <b>master</b>. Esse exemplo contém todos os aspectos fornecidos pelo
+                                        VSS-SDK.
                                     </p>
-                                    <p>
-                                        No branch <b>mpp_thesis</b> encontra-se um trabalho de dissertação, onde é planejado uma trajetória para todos
-                                        os robôs e os mesmo são guiados por esses caminhos evitando colisões.
-                                    </p>
-				                    <img src="assets/images/vss-sample/top.png" style="max-width: 100%"/>
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
 
-                            <section id="working-section" class="doc-section">
-                                <h2 class="section-title">Funcionamento</h2>
+                            <section id="cpp-section" class="doc-section">
+                                <h2 class="section-title">Exemplo em C++</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        Aqui encontra-se o funcionamento do VSS-SampleStrategy, isto é, como está organizado as classes, o que é necessário para desenvolver sua própria estratégia de jogo.
+                                        Aqui encontra-se o funcionamento do VSS-SampleCpp, isto é, como está organizado as classes, o que é necessário para desenvolver sua própria estratégia de jogo.
                                         O projeto busca utilizar vantagem do conceito de encapsulamento de programação.
                                     </p>
                                     <div class="code-block">
@@ -167,6 +163,88 @@
                                         </div>
 
                                     </div><!--//code-block-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+
+
+                            <section id="rust-section" class="doc-section">
+                                <h2 class="section-title">Exemplo Rust</h2>
+                                <div id="step1" class="section-block">
+                                    <p>
+                                        Aqui encontra-se alguns aspectos técnicos sobre o funcionamento exemplo de estratégia, como, as bibliotecas utilizadas e o motivo
+                                        de utiliza-las.
+                                    </p>
+                                    <div class="code-block">
+
+                                        <div id="interface_data" class="section-block">
+                                            <div class="code-block">
+                                                <h6>Protobuf & ZMQ</h6>
+                                                <p>
+                                                    O VSS-SampleStratewgy recebe os estados de jogo e envia pacotes de debug via sockets, para isso é utilizado a biblioteca Google Procol Buffers (Protobuf)
+                                                    para serializar
+                                                    e deserializar as mensagens, pois dentre todas as opções existentes a mesma apresenta um dos melhores desempenhos e pode ser utilizada
+                                                    em diversas linguagens. A biblioteca é neutra em linguagem e neutra em plataforma, como XML, porém menor, mais rapido e simples.
+                                                </p>
+                                                <p>
+                                                    Para receber os dados do VSS-Vision e VSS-Simulator o projeto abre uma inscrição em um multicast na porta 5555 e para enviar os pacotes de debug para o VSS-Viewer, é
+                                                    aberto um socket unicast na porta 5557 ou na porta 5558, para isso, é utilizado a biblioteca ZeroMQ.
+                                                    A biblioteca também busca ser neutra em linguagem e plataforma, assim o sistema de visão e todos os outros projetos estão aptos a rodar em múltiplos
+                                                    computadores com SOs diferentes. É possivel desenvolver um módulo de inteligência que se comunique com os projetos do VSS-SDK nas
+                                                    seguintes linguagens: C++, Java, Python, JavaScript, Go, Ruby, Objective-C, C#, Perl, PHP, Scala e Julia.
+                                                </p>
+                                            </div><!--//code-block-->
+                                        </div>
+
+                                    <div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-terminal"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="use.html">Entenda como funciona a comunicação entre os projetos</a></h4>
+                                            <p>Como é realizado a comunicação entre os softwares</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-cube"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="viewer.html">Como o VSS-Viewer obtém e desenha suas informações de Debug</a></h4>
+                                            <p>Como utilizar o VSS-Viewer e os outros projetos do VSS-SDK</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-low-vision"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="vision.html">Entenda como o VSS-Vision rastreia os objetos em campo</a></h4>
+                                            <p>Quais técnicas e bibliotecas o VSS-Vision utiliza</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-futbol-o"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="simulator.html">Entenda como o VSS-Simulator realiza partidas</a></h4>
+                                            <p>Quais bibliotecas o VSS-Simulator utiliza</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
+                                     <div class="callout-block callout-success">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-gamepad"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title"><a href="joystick.html">Entenda como o VSS-Joystick pode ser útil</a></h4>
+                                            <p>Como controlar robôs utilizando qualquer joystick</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-->
+
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
 
@@ -256,13 +334,19 @@
                     <div class="doc-sidebar hidden-xs">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
-                                <li><a class="scrollto" href="#top-section">Oque é o VSS-SampleStrategy?</a></li>
+                                <li><a class="scrollto" href="#top-section">Oque são VSS-Samples?</a></li>
                                 <li>
-                                    <a class="scrollto" href="#working-section">Funcionamento</a>
+                                    <a class="scrollto" href="#cpp-section">Exemplo em C++</a>
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#sample_data">Classe Sample</a></li>
                                         <li><a class="scrollto" href="#namespace_data">Namespace global</a></li>
                                         <li><a class="scrollto" href="#strategy_data">Classe Strategy</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#rust-section">Exemplo Rust</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#interface_data">Em construção</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li>
