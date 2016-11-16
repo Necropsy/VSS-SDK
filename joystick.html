@@ -52,7 +52,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-gamepad"></i> VSS-Joystick</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 20 de Outubro de 2016</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 16 de Novembro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -81,7 +81,15 @@
                                         <div id="unique_data" class="section-block">
                                             <div class="code-block">
                                                 <h6>Classe Única</h6>
-                                                <img src="assets/images/vss-joystick/joystick.png" style="max-width: 100%"/>
+<pre><code class="language-clike" id="samplejoy">/*
+ * This file is part of the VSS-SDK project.
+ *
+ * This Source Code Form is subject to the terms of the GNU GENERAL PUBLIC LICENSE,
+ * v. 3.0. If a copy of the GPL was not distributed with this
+ * file, You can obtain one at http://www.gnu.org/licenses/gpl-3.0/.
+ */
+
+</code></pre>
                                                 <br><br>
                                                 <p>
                                                      Para enviar comandos para robôs reais basta adicionar uma chamada para o código de transmissão no <b>else</b>. É necessário adicionar a
@@ -217,6 +225,15 @@
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
     
+    <script>
+        $(document).ready(function() {
+            $.get("https://raw.githubusercontent.com/SIRLab/VSS-Joystick/master/src/core.cpp", function(data) {
+                var html = Prism.highlight(data, Prism.languages.cpp);
+                $('#samplejoy').html(html);
+            });
+        });
+    </script>
+
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

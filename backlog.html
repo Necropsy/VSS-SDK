@@ -53,7 +53,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="fa fa-history"></span> Backlog</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 09 de Novembro de 2016</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 16 de Novembro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -64,7 +64,7 @@
                                     <p>
                                         O VSS-SDK possui uma arquitetura desacoplada e distribuída, assim, facilitando o desenvolvimento por quaisquer pessoas.
                                         O SDK é um meio de facilitar o acesso e utilização dos projetos. Para que alguém possa contribuir com algum projeto o mesmo deve
-                                        acessar os projetos no github: <b><a href="https://github.com/SIRLab/VSS-Vision" target="_blank">VSS-Vision</a></b>, <b><a href="https://github.com/SIRLab/VSS-Simulator" target="_blank">VSS-Simulator</a></b>, <b><a href="https://github.com/SIRLab/VSS-Viewer" target="_blank">VSS-Viewer</a></b>, <b><a href="https://github.com/SIRLab/VSS-Joystick" target="_blank">VSS-Joystick</a></b>, <b><a href="https://github.com/SIRLab/VSS-SampleStrategy" target="_blank">VSS-SampleStrategy</a></b> e <b><a href="https://github.com/SIRLab/VSS-GameLogger" target="_blank">VSS-GameLogger</a></b>. Criando um <b>fork</b> da versão mais
+                                        acessar os projetos no github: <b><a href="https://github.com/SIRLab/VSS-Vision" target="_blank">VSS-Vision</a></b>, <b><a href="https://github.com/SIRLab/VSS-Simulator" target="_blank">VSS-Simulator</a></b>, <b><a href="https://github.com/SIRLab/VSS-Viewer" target="_blank">VSS-Viewer</a></b>, <b><a href="https://github.com/SIRLab/VSS-Joystick" target="_blank">VSS-Joystick</a></b>, <b><a href="https://github.com/SIRLab/VSS-SampleCpp" target="_blank">VSS-SampleCpp</a></b>, <b><a href="https://github.com/SIRLab/VSS-SampleRust" target="_blank">VSS-SampleRust</a></b> e <b><a href="https://github.com/SIRLab/VSS-GameLogger" target="_blank">VSS-GameLogger</a></b>. Criando um <b>fork</b> da versão mais
                                         atualizada de um projeto, contribuindo com algo, documentando as modificações e abrindo um <b>pull request</b>. 
                                     </p>
                                     <p>
@@ -216,10 +216,10 @@
                                             <table>
                                                 <tr>
                                                     <td>
-                                                        <i class="fa fa-asterisk" aria-hidden="true" style="margin-right: 10px;"></i>
+                                                        <i class="fa fa-exclamation" aria-hidden="true" style="margin-right: 10px;"></i>
                                                     </td>
                                                     <td>
-                                                        <b>Adicionar exemplo em Rust;</b>
+                                                        <b>Melhorar o exemplo em Rust;</b>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -303,6 +303,46 @@
                             <section id="releases-section" class="doc-section">
                                 <h2 class="section-title">Releases</h2>
                                     
+                                    <div id="v_eleven" class="section-block">
+                                        <h3 class="question"><b>v1.1.1</b></h3>
+                                        <p>
+                                            <h5> VSS-SDK </h5>
+                                            <b>
+                                                <span style="color: red;">[Removido]: Estratégias incompatíveis;</span>
+                                                <br>
+                                                <span style="color: purple;">[Modificado]: VSS-SampleStrategy passa a ser VSS-Samples;</span>
+                                                <br>
+                                                <span style="color: purple;">[Modificado]: VSS-Samples possui exemplos em C++ e Rust;</span>
+                                                <br>
+                                                <span style="color: purple;">[Modificado]: install.sh, init.sh, run.sh e update.sh atualizados para o sample em Rust;</span>
+                                                <br>
+                                                <span style="color: purple;">[Modificado]: Todos os arquivos .travis.yml;</span>
+                                                <br>
+                                                <span style="color: purple;">[Modificado]: README.md;</span>
+                                                <br>
+                                                <span style="color: purple;">[Modificado]: Todos os VSS-Interfaces;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-Vision </h5>
+                                            <b>    
+                                                <span style="color: green;">[Corrigido]: Problema na otimização;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleCpp </h5>
+                                            <b>
+                                                <span style="color: purple;">[Modificado]: Antigo VSS-SampleStrategy;</span>
+                                                <br> 
+                                                <span style="color: blue;">[Implementado]: Branch simple, exemplo muito simples de funcionamento;</span>
+                                            </b>
+                                            <br><br>
+                                            <h5> VSS-SampleRust </h5>
+                                            <b>
+                                                <span style="color: blue;">[Implementado]: Comunicação estável, porém, não refatorada;</span>
+                                            </b>
+                                        </p>
+                                    </div>
+
+
                                     <div id="v_ten" class="section-block">
                                         <h3 class="question"><b>v1.1.0</b></h3>
                                         <p>
@@ -615,6 +655,7 @@
                                 <li>
                                     <a class="scrollto" href="#releases-section">Releases</a>
                                     <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#v_eleven">v1.1.1</a></li>
                                         <li><a class="scrollto" href="#v_ten">v1.1.0</a></li>
                                         <li><a class="scrollto" href="#v_nine">v1.0.9</a></li>
                                         <li><a class="scrollto" href="#v_eight">v1.0.8</a></li>
