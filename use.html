@@ -52,7 +52,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="fa fa-terminal"></i> Utilização e Desenvolvimento</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 25 de Setembro de 2016</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Última Atualização: 21 de Nobembro de 2016</div>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -62,62 +62,129 @@
                                 <h2 class="section-title">Utilização Básica</h2>
                                 <div id="step1"  class="section-block">
                                     <p>
-                                        Exemplos de utilização básica com as <b>tags: vision, sim, viewer, joy, sample e debug</b>
+                                        Existem uma série de tags que podem ser empregadas na execução do VSS-SDK pelo shellscript run.sh, vale lembrar
+                                        que esse método de execução é destinado somente a um computador. As tags são: <b>vision, sim, viewer, joy, sample, debug, develop e fast.</b>
                                     </p>
                                     <div class="code-block">
-                                        <h6>Executando o VSS-Simulator</h6>
+                                        <h5>vision</h5>
+                                        <p>
+                                            Adiciona o VSS-Vision a lista de execução. Incompatível com a execução do VSS-Simulator.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>sim</h5>
+                                        <p>
+                                            Adiciona o VSS-Simulator a lista de execução. Incompatível com a execução do VSS-Vision.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>viewer</h5>
+                                        <p>
+                                            Adiciona o VSS-Viewer a lista de execução.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>joy</h5>
+                                        <p>
+                                            Adiciona o VSS-Joystick a lista de execução, como estratégia do time amarelo.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>sample</h5>
+                                        <p>
+                                            Adiciona um VSS-SampleCpp [branch:master] a lista de execução.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>debug</h5>
+                                        <p>
+                                            Ativa o sistema de debug visual no VSS-Viewer, isto é, o desenho de poses finais, vetores de movimento e caminhos.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>develop</h5>
+                                        <p>
+                                            Ativa o modo de desenvolvimento no VSS-Simulator, isto é, não há mais limite de tempo ou de gols para uma partida finalizar.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>fast</h5>
+                                        <p>
+                                            Ativa o modo de execução acelerada no VSS-Simulator, isto é, o tempo passa 15 vezes mais rápido.
+                                        </p>
+                                    </div>
+                                    <br>
+                                    <div class="code-block">
+                                        <h5>Alguns exemplos de como as tags podem ser empregadas na execução:</h5>
+                                        <br>
+                                        <h6>Simulação acelerada sem interface gráfica</h6>
                                         <p>
                                             <code>
-                                                ./run.sh sim
+                                                ./run.sh vision viewer
                                             </code>
                                         </p>
-                                        <h6>Executando o VSS-Simulator + VSS-Viewer</h6>
+                                        <p>
+                                            Nesse modo, o VSS-Vision irá rastrear objetos em campo e o VSS-Viewer irá desenhar os objetos em campo como o ambiente real.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Simulação acelerada sem interface gráfica</h6>
                                         <p>
                                             <code>
-                                                ./run.sh sim viewer
+                                                ./run.sh sim fast yellow=sample blue=sample
                                             </code>
                                         </p>
-                                        <h6>Executando o VSS-Simulator + VSS-Viewer + VSS-Joystick</h6>
                                         <p>
-                                            <code>
-                                                ./run.sh sim viewer joy
-                                            </code>
+                                            Nesse modo, a simulação de um jogo de 10 minutos ocorrerá em cerca de 40 segundos sem ambiente gráfico, o VSS-Simulator irá
+                                            plotar algumas informações do jogo no terminal e ao final irá retornar o relatório de jogo.
                                         </p>
-                                        <h6>Executando o VSS-Simulator + VSS-Viewer + VSS-SampleStrategy</h6>
-                                        <p>
-                                            <code>
-                                                ./run.sh sim viewer yellow=sample
-                                            </code>
-                                        </p>
-                                        <h6>Executando o VSS-Simulator + VSS-Viewer + (2) VSS-SampleStrategy</h6>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Simulação com interface gráfica</h6>
                                         <p>
                                             <code>
                                                 ./run.sh sim viewer yellow=sample blue=sample
                                             </code>
                                         </p>
-                                        <h6>Executando o VSS-Simulator + VSS-Viewer + (2) VSS-SampleStrategy + Debug</h6>
+                                        <p>
+                                            Nesse modo, ocorrerá a simulação de uma partida em 10 minutos. O jogo poderá ser assistido no VSS-Viewer e o VSS-Simulator continuará
+                                            a plotar informações de jogo e retornar o relatório final de jogo.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Simulação com interface gráfica e informações de debug</h6>
                                         <p>
                                             <code>
-                                                ./run.sh sim viewer yellow=sample blue=sample debug
+                                                ./run.sh sim viewer debug yellow=sample blue=sample
                                             </code>
                                         </p>
-                                        <h6>Executando o VSS-Simulator + VSS-Viewer + VSS-SampleStrategy + VSS-Joystick</h6>
+                                        <p>
+                                            Nesse modo, ocorrerá a simulação de uma partida de 10 minutos com debug visual. O jogo poderá ser assistido no VSS-Viewer, que além de desenhar
+                                            o mundo também irá desenhar poses finais, vetores de movimento e caminhos.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Controlando um robô no simulador com um joystick usb</h6>
                                         <p>
                                             <code>
-                                                ./run.sh sim viewer yellow=joy blue=sample
+                                                ./run.sh sim viewer yellow=joy
                                             </code>
                                         </p>
-                                        <h6>Executando o VSS-Vision</h6>
+                                        <p>
+                                            Nesse modo, ocorrerá a simulação de uma partida de 10 minutos, onde um jogador irá controlar um robô amarelo. O jogo poderá ser assistido no VSS-Viewer
+                                            como um videogame.
+                                        </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Modo de desenvolvimento com informações de debug</h6>
                                         <p>
                                             <code>
-                                                ./run.sh vision
+                                                ./run.sh sim viewer debug develop
                                             </code>
                                         </p>
-                                        <h6>Executando o VSS-Vision + VSS-Viewer</h6>
                                         <p>
-                                            <code>
-                                                ./run.sh vision viewer
-                                            </code>
+                                            Nesse modo, a simulação não termina até que o processo seja fechado. O VSS-Simulator e o VSS-Viewer estarão a espera de uma estratégia. <b>Note que,
+                                            você pode executar uma estratégia por fora do run.sh, verificar um erro, fechar a estratégia, modificá-la e testar novamente.</b>
                                         </p>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
@@ -137,7 +204,8 @@
                                             <code>
                                                 ./VSS-Simulator -h <br>
                                                 -h [ --help ] (Opcional) Exibe todos os parâmetros possiveis. <br>
-                                                -f [ --fast ] (Opcional) Aumenta a velocidade do decorrer do tempo em 25 vezes. <br>
+                                                -f [ --fast ] (Opcional) Aumenta a velocidade do decorrer do tempo em 15 vezes. <br>
+                                                -d [ --develop ] (Opcional) Ativa o modo de desenvolvimento. <br>
                                                 -g [ --goal ] (Opcional) Aumenta a quantidade de gols necessários para acabar uma partida. Valores entre 10 e 100.
                                             </code>
                                         </p>
@@ -163,12 +231,13 @@
                                             </code>
                                         </p>
                                         <br>
-                                        <h6>Parâmetros VSS-SampleStrategy</h6>
+                                        <h6>Parâmetros VSS-SampleCpp [branch:master]</h6>
                                         <p>
                                             <code>
                                                 ./VSS-SampleStrategy -h <br>
                                                 -h [ --help ] (Opcional) Exibe todos os parâmetros possiveis. <br>
                                                 -d [ --debug ] (Opcional) Ativa a envio de debug de caminhos e poses. <br>
+                                                -n [ --name ] (Opcional) Define um nome para a estratégia. <br>
                                                 -i [ --ip_receive_state ] (Opcional) Define o IP de uma máquina na rede que esteja rodando o VSS-Vision ou VSS-Simulator. <br>
                                                 -I [ --ip_send_debug ] (Opcional) Define o IP de uma máquina na rede que esteja rodando o VSS-Viewer <br> 
                                                 -s [ --ip_send_command ] (Opcional) Define o IP de uma máquina na rede que esteja rodando o VSS-Simulator. <br>
@@ -342,6 +411,8 @@
                 var html = Prism.highlight(data, Prism.languages.cpp);
                 $('#debugproto').html(html);
             });
+
+            
         });
     </script>
     
